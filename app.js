@@ -26,6 +26,10 @@ app.get('/contact', (req, res) => {
   res.render('contact.ejs', {content: contactContent})
 })
 
+app.get('/compose', (req, res) => {
+  res.render('compose.ejs')
+})
+
 
 
 
