@@ -3,7 +3,12 @@
         Compose
     </h1>
     <form method="post" action="/compose">
-        <input type="text" name="new">
-        <button type="submit">Publish</button>
+        <div class="form-floating">
+            <strong>Title</strong>
+            <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <strong>Post</strong>
+            <textarea class="form-control" name="post" style="height: 100px"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Publish</button>
     </form>
 <%- include('partials/footer'); -%>
