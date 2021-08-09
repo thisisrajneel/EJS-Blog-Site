@@ -8,6 +8,8 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 
 const app = express();
 
+const posts = [];
+
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended:true}));
@@ -32,7 +34,9 @@ app.get('/compose', (req, res) => {
 
 app.post('/compose', (req, res) => {
   const post = req.body
-  console.log(post);
+  posts.push(post)
+  console.log(posts);
+  res.redirect('/')
 })
 
 
