@@ -10,7 +10,10 @@
             <%= e.postTitle %>
         </h1>
         <p>
-            <%= e.postBody %>
+            <%= e.postBody.substring(0,100) + '...' %>
+            <a href="/posts/<%= e.postTitle %>">
+                Read More
+            </a>
         </p>
     <% }) %>
 <%- include('partials/footer'); -%>

@@ -34,18 +34,11 @@ app.get('/compose', (req, res) => {
 })
 
 app.get('/posts/:title', (req, res) => {
-  let flag = false;
   posts.forEach(function(p) {
     if(_.lowerCase(p.postTitle) == _.lowerCase(req.params.title)) {
-      flag = true
+      res.render('post.ejs', {title: p.postTitle, content: p.postBody})
     }
   })
-  if(flag) {
-    console.log('match found');
-  }
-  else {
-    console.log('match not found');
-  }
 })
 
 app.post('/compose', (req, res) => {
@@ -53,16 +46,6 @@ app.post('/compose', (req, res) => {
   posts.push(post)
   res.redirect('/')
 })
-
-
-
-
-
-
-
-
-
-
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
