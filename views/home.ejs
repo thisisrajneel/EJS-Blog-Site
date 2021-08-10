@@ -5,4 +5,12 @@
     <p>
         <%= content %>
     </p>
+    <% allPosts.forEach(function(e) { %>
+        <h1>
+            <%= e.postTitle %>
+        </h1>
+        <p>
+            <%= e.postBody %>
+        </p>
+    <% }) %>
 <%- include('partials/footer'); -%>
